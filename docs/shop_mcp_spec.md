@@ -102,11 +102,11 @@ pip install -e .
 {
   "mcpServers": {
     "shop-mcp": {
-      "command": "E:/dev/training/mcp_example/venv/Scripts/python.exe",
+      "command": "/absolute/path/to/repo/venv/Scripts/python.exe",
       "args": ["-m", "shop_mcp"],
-      "cwd": "E:/dev/training/mcp_example",
+      "cwd": "/absolute/path/to/repo",
       "env": {
-        "SHOP_DB_PATH": "E:/dev/training/mcp_example/data/shop.db"
+        "SHOP_DB_PATH": "/absolute/path/to/repo/data/shop.db"
       }
     }
   }

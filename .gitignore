@@ -147,6 +147,12 @@ activemq-data/
 # SageMath parsed files
 *.sage.py
 
+# Local shop DB (may contain customer-like PII)
+*.db
+
+# Local Cursor MCP config (real absolute paths after setup)
+.cursor/mcp.json
+
 # Environments
 .env
 .envrc

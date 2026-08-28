@@ -35,7 +35,7 @@ pip install -e .
    SHOP_DB_PATH=data/shop.db
    ```
 
-2. Place the shop SQLite database at that path (for example `data/shop.db`).
+2. Place the shop SQLite database at that path (for example `data/shop.db`). The production DB is **not** committed (`*.db` is gitignored) because it can contain customer-like contact data — obtain it from the course materials or your own sanitized copy.
 
 3. Cursor `mcp.json` `env` values override `.env`. Graders may set only Cursor env and never create a `.env` file; the server still works.
 
@@ -53,7 +53,7 @@ Missing `SHOP_DB_PATH` / missing DB file does **not** prevent process startup. T
 
 ## Connect to Cursor
 
-1. Copy `.cursor/mcp.json.example` to your Cursor MCP config (for example `.cursor/mcp.json` in this project, or your user MCP settings).
+1. Copy `.cursor/mcp.json.example` to your Cursor MCP config (for example `.cursor/mcp.json` in this project, or your user MCP settings). **Do not commit** `.cursor/mcp.json` — it is gitignored because it holds machine-local absolute paths.
 2. Edit the absolute paths for:
    - `command` — venv Python (`…/venv/Scripts/python.exe` on Windows, `…/venv/bin/python` on Unix)
    - `cwd` — repository root
@@ -65,11 +65,11 @@ Example shape:
 {
   "mcpServers": {
     "shop-mcp": {
-      "command": "E:/dev/training/mcp_example/venv/Scripts/python.exe",
+      "command": "/absolute/path/to/repo/venv/Scripts/python.exe",
       "args": ["-m", "shop_mcp"],
-      "cwd": "E:/dev/training/mcp_example",
+      "cwd": "/absolute/path/to/repo",
       "env": {
-        "SHOP_DB_PATH": "E:/dev/training/mcp_example/data/shop.db"
+        "SHOP_DB_PATH": "/absolute/path/to/repo/data/shop.db"
       }
     }
   }
