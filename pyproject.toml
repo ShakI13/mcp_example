@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shop-mcp"
+version = "0.1.0"
+description = "Read-only MCP server for analytical queries against a shop SQLite database"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.9.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+shop-mcp = "shop_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
